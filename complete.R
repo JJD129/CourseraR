@@ -13,7 +13,7 @@ complete <- function(directory, id = 1:332)   {
   ## where 'id' is the monitor ID number and 'nobs' is the
   ## number of complete cases
   
-  fileList <- list.files(path=directory, pattern = ".csv", full.names = TRUE) # vector of files
+  filelist <- list.files(path=directory, pattern = ".csv", full.names = TRUE) # vector of files
   nobs <- numeric() # constructing empty vector to put in values
   
   for(i in id)   {
