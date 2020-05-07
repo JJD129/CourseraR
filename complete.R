@@ -13,12 +13,12 @@ complete <- function(directory, id = 1:332)   {
   ## where 'id' is the monitor ID number and 'nobs' is the
   ## number of complete cases
   
-  filelist <- list.files(path=directory, pattern = ".csv", full.names = TRUE) # vector of files
-  nobs <- numeric() # constructing empty vector to put in values
+  fileList <- list.files(path=getwd(), pattern = ".csv", full.names = TRUE)
+  nobs <- numeric()
   
-  for(i in id)   {
-    data <- read.csv(filelist[i]) ## read starting from first file, stored in data
-    nobs <- c(nobs, sum(!is.na(data))) ## nobs is concatenated with nobs, sum of completed data cases
+  for (i in id){
+    data<-read.csv(fileList[i])
+    nobs <-c(nobs, sum(complete.cases(data)))
   }
   
 }
